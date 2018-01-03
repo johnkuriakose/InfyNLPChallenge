@@ -1,0 +1,17 @@
+python np_data_helper.py \
+std \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+3 \
+3
+
+python np_data_helper.py \
+gen \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+3 \
+3
+
+python np_data_helper.py \
+mmap \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+3 \
+3

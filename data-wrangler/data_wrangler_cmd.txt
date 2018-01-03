@@ -1,0 +1,141 @@
+******************** DATA WRANGLER ********************
+
+python data_wrangler.py xml 0_bankruptcy_xml_chunk.txt 0_bankruptcy.txt Country FullText
+
+python data_wrangler.py xml /datadrive/nlp/NewsChunks/0.txt,/datadrive/nlp/NewsChunks/1.txt news_0_1.txt Language FullText
+
+python data_wrangler.py \
+tsv \
+/datadrive/ML/shubham/data_wrangler_new/smm4h_task2_train.txt \
+/datadrive/nlp/jasper/self-service-class/data/smm4h_task2_train_FT1.tsv 
+
+python data_wrangler.py \
+tsv \
+/datadrive/ML/shubham/data_wrangler_new/smm4h_task2_dev.txt \
+/datadrive/nlp/jasper/self-service-class/data/smm4h_task2_dev_FT1.tsv 
+
+python \
+data_wrangler.py \
+split \
+/datadrive/nlp/semeval/fasttext_tsv/semeval-sent3-all-train17.txt \
+/datadrive/nlp/semeval/fasttext_tsv/semeval-sent3-all-train17-t.txt \
+/datadrive/nlp/semeval/fasttext_tsv/semeval-sent3-all-train17-d.txt \
+0.2 
+
+python data_wrangler.py \
+rm_col \
+/datadrive/nlp/jasper/smm4h/download/smm4h_task2_dev_raw_download_user.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_dev_STD1i.txt \
+1,2
+
+python data_wrangler.py \
+append \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_additional_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_original_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_all_STD1i_x.txt
+
+python \
+data_wrangler.py \
+split \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_all_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_cv_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_test_STD1i.txt \
+0.1
+
+python \
+data_wrangler.py \
+split \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_cv_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_train_STD1i.txt \
+/datadrive/nlp/jasper/smm4h/smm4h_task2_dev_STD1i.txt \
+0.2
+
+python \
+data_wrangler.py \
+csv-c \
+/datadrive/nlp/jasper/barclays/cc_product_adv_chunk_test.csv \
+/datadrive/nlp/jasper/barclays/cc_product_adv_test_STD1i.txt \
+1 \
+5 \
+17
+
+python \
+data_wrangler.py \
+csv-c \
+/datadrive/nlp/jasper/barclays/cc_product_adv_chunk_trn.csv \
+/datadrive/nlp/jasper/barclays/cc_product_adv_trn_STD1i.txt \
+1 \
+5 \
+17
+
+python \
+data_wrangler.py \
+csv-c \
+/datadrive/nlp/jasper/barclays/cc_sub_product_adv_chunk_test.csv \
+/datadrive/nlp/jasper/barclays/cc_sub_product_adv_test_STD1i.txt \
+2 \
+5 \
+17
+
+python \
+data_wrangler.py \
+csv-c \
+/datadrive/nlp/jasper/barclays/cc_issue_adv_chunk_test.csv \
+/datadrive/nlp/jasper/barclays/cc_issue_adv_test_STD1i.txt \
+3 \
+5 \
+17
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_02_28.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_02_28_g_STD1i.txt \
+5 \
+6 \
+0
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_02_28.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_02_28_i_STD1i.txt \
+7 \
+8 \
+0
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_03_31.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_03_31_g_STD1i.txt \
+5 \
+6 \
+0
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_03_31.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_03_31_i_STD1i.txt \
+7 \
+8 \
+0
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_01_30.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_01_30_g_STD1i.txt \
+5 \
+6 \
+0
+
+python \
+data_wrangler.py \
+tsv-c \
+"/datadrive/nlp/jasper/voc/2017 VoC Survey data for TCS 2017_01_30.tsv" \
+/datadrive/nlp/jasper/voc/voc_2017_01_30_i_STD1i.txt \
+7 \
+8 \
+0

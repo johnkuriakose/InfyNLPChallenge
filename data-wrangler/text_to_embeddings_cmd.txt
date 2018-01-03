@@ -1,0 +1,236 @@
+#source activate python3 or tensorflow3, 100
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.bin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100.txt \
+--output_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100_embedd_400.npy \
+--vector_dimension 400 \
+> to_embedd_n100.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.bin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100.txt \
+--output_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100_embedd_400.npy \
+--vector_dimension 400 \
+> to_embedd_n100.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.bin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task1.txt \
+--output_file /datadrive/nlp/jasper/smm4h/smm4h_task1_embedd_400.npy \
+--vector_dimension 400 \
+> to_embedd_smm4h_task1_load.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.bin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100.txt \
+--output_file /datadrive/nlp/jasper/smm4h/smm4h_task1_n100_embedd_400.npy \
+--vector_dimension 400 \
+> to_embedd_n100.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_train.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_train_jinho_400.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_dev.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_dev_jinho_400.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_cv_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_cv_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_train_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_train_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_dev_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_dev_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_test_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_test_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_test_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/semeval/std1/twitter-2016test-A_sample_STD1i.txt \
+--output_file /datadrive/nlp/semeval/npy/semeval-2016test-A_sample_jinho_400.txt \
+--vector_dimension 400 \
+--document_length 120 \
+> semeval-2016test-A_sample_jinho_400.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_sub_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_sub_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_sub_jinho_400.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_sub_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_sub_godin_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_sub_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_test_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_test_godin_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_test_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_cv_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_godin_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_cv_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_all_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_all_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_all_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_all_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_all_godin_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_all_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_debug_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_debug_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_debug_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/semeval/std1/semeval_sent_alltrain17_STD1i.txt \
+--output_file /datadrive/nlp/semevalnpy/semeval_sent_alltrain17_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 120 \
+> semeval_sent_alltrain17_jinho_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/semeval/std1/semeval_sent_alltrain17_STD1i.txt \
+--output_file /datadrive/nlp/semeval/npy/semeval_sent_cv_godin_400.npy \
+--vector_dimension 400 \
+--document_length 120 \
+> semeval_sent_alltrain17_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.godin \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_all_test_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_all_test_godin_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_all_test_godin_400.out
+
+nohup \
+python \
+text_to_embeddings.py \
+--model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--input_file /datadrive/nlp/jasper/smm4h/smm4h_task2_all_test_STD1i.txt \
+--output_file /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_all_test_jinho_400.npy \
+--vector_dimension 400 \
+--document_length 47 \
+> smm4h_task2_all_test_jinho_400.out

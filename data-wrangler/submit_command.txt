@@ -1,0 +1,25 @@
+******************** GERMAN PREPROCESSING ********************
+nohup \
+python3 \
+preprocessing.py \
+/mnt/resource/jasper/news.2013.de.shuffled \
+corpus/news.2013.de.spacy.corpus \
+spacy \
+en \
+-psd \
+> news.2013.out
+
+******************** ENGLISH PREPROCESSING ********************
+nohup \
+python3 \
+preprocessing.py \
+/mnt/resource/jasper/news.2013.de.shuffled \
+corpus/news.2013.de.spacy.corpus \
+spacy \
+de \
+-psud \
+> news.2013.out
+
+******************** EMBEDDING HELPER ********************
+
+python embedding_helper.py -m /datadrive/nlp/jasper/w2v/godin/word2vec_twitter_model/word2vec_twitter_model.bin
