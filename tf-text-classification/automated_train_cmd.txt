@@ -1,0 +1,82 @@
+to run for train-dev split:
+
+nohup \
+python automated_train.py \
+--max_running_time 1 \
+--experiment_name semeval_a_permutation_D0 \
+--architecture tsainfcnn \
+--learning_rate_range 0.0001 0.001 \
+--num_epochs 2 \
+--batch_size_range 50 100 150 \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+--train_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+--dev_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--no_one_hot \
+--keep_prob_range 0.7 0.8 0.9 \
+--embedd_filter_sizes_range 2,3,4,5,6 1,2,3,4,5 2,3,3,3,5 \
+--n_filters_range 100 150 \
+--n_dense_output_range 100 150 200 250 \
+> semeval_a_permutation_D0.out
+
+nohup \
+python automated_train.py \
+--max_running_time 50 \
+--experiment_name semeval_a_att_perm_0 \
+--architecture attention-cnn \
+--learning_rate_range 0.0001 0.001 \
+--num_epochs 50 \
+--batch_size_range 50 100 150 \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+--train_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+--dev_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--no_one_hot \
+--keep_prob_range 0.7 0.8 0.9 \
+--embedd_filter_sizes_range 2,3,4,5,6 1,2,3,4,5 2,3,3,3,5 \
+--n_filters_range 100 150 \
+--n_dense_output_range 100 150 200 250 \
+--attention_depth 40 90 120 \
+> semeval_a_att_perm_0.out
+
+nohup \
+python automated_train.py \
+--max_running_time 20 \
+--cross_valid 5 \
+--experiment_name smm4h_task2_godin_cv_adam \
+--architecture tsainfcnn \
+--learning_rate_range 0.0001 0.001 \
+--num_epochs 50 \
+--batch_size_range 50 100 150 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_godin_400.npy \
+--keep_prob_range 0.7 0.8 0.9 \
+--embedd_filter_sizes_range 2,3,4,5,6 1,2,3,4,5 \
+--n_filters_range 100 150 200 \
+--n_dense_output_range 100 150 200 \
+>> smm4h_task2_godin_cv_adam.out
+
+nohup \
+python automated_train.py \
+--max_running_time 2 \
+--cross_valid 5 \
+--experiment_name smm4h_task2_jinho_cv_adam \
+--architecture tsainfcnn \
+--learning_rate_range 0.0001 0.001 \
+--num_epochs 50 \
+--batch_size_range 50 100 150 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--keep_prob_range 0.7 0.8 0.9 \
+--embedd_filter_sizes_range 2,3,4,5,6 1,2,3,4,5 \
+--n_filters_range 100 150 200 \
+--n_dense_output_range 100 150 200 \
+>> smm4h_task2_jinho_cv_adam.out

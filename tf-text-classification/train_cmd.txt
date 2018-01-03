@@ -1,0 +1,274 @@
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name tsainfcnn-3 \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+--train_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+--dev_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--test_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.npy \
+--keep_prob 0.7 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 256 \
+--n_dense_output 256 \
+> tsainfcnn-3.out
+
+nohup \
+python train.py \
+--architecture attention-cnn \
+--run_name attention-cnn-d0 \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+--train_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+--dev_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--test_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.npy \
+--keep_prob 0.9 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 150 \
+--n_dense_output 150 \
+--attention_depth 50 \
+> attention-cnn-d0.out
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name smm4h_task1_test \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 46 \
+--embedding_dimension 400 \
+--n_classes 2 \
+--train_path /datadrive/nlp/jasper/smm4h/smm4h_task1_embedd_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/smm4h_task1_embedd_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 256 \
+--n_dense_output 256 \
+> smm4h_task1_test.out
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name smm4h_task2_t1 \
+--learning_rate 0.0001 \
+--num_epochs 30 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/ML/shubham/data_wrangler_new/smm4h_task2_train_embedd_400.npy \
+--dev_path /datadrive/ML/shubham/data_wrangler_new/smm4h_task2_dev_embedd_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 128 \
+--n_dense_output 128 \
+> smm4h_task2_t1.out
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name smm4h_task2_godin_cv_man_shub \
+--learning_rate 0.0001 \
+--num_epochs 30 \
+--batch_size 50 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_godin_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 5 6 \
+--n_filters 200 \
+--n_dense_output 200 \
+> smm4h_task2_godin_cv_rand_shub.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name smm4h_task2_godin_cv_rand_shub_ab2_9 \
+--learning_rate 0.0001 \
+--num_epochs 30 \
+--batch_size 50 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_godin_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 5 6 \
+--n_filters 200 \
+--n_dense_output 200 \
+--optimizer adam \
+--adam_b2 0.9 \
+--verbose 1 \
+> smm4h_task2_godin_cv_rand_shub_ab2_9.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name best_smm4h_t2_godin_a9_0 \
+--learning_rate 0.0001 \
+--num_epochs 50 \
+--batch_size 50 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_godin_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_godin_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 200 \
+--n_dense_output 200 \
+--adam_b2 0.9 \
+--verbose 1 \
+> best_smm4h_t2_godin_a9_0.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name train_td_test_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+> train_td_test_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name cross_val_test_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+> cross_val_test_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name train_td_test_no_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+--annealing_restarts 0 \
+--annealing_factor 0 \
+> train_td_test_no_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name cross_val_test_no_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+--annealing_restarts 0 \
+--annealing_factor 0 \
+> cross_val_test_no_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name top3_8_eval_test \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 50 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.8 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 300 \
+--n_dense_output 400 \
+--adam_b2 0.999 \
+--eval_metric f1_micro \
+--eval_labels 0 1 \
+--verbose 2 \
+> top3_8_eval_test.out 
+
+nohup \
+python train.py \
+--architecture attention-cnn \
+--run_name attention-cnn-d0 \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+--train_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+--dev_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--keep_prob 0.9 \
+--embedd_filter_sizes 1 2 3 4 5 \
+--n_filters 150 \
+--n_dense_output 150 \
+--attention_depth 50 \
+--annealing_restarts 0 \
+--annealing_factor 0 \
+--verbose 1 \
+> attention-cnn-d0.out

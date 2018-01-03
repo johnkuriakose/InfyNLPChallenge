@@ -1,0 +1,57 @@
+#Confirm validation results
+nohup \
+python decode.py \
+--checkpoint_file /datadrive/ML/jasper/tensorflow/cnn-classification/tmp/semeval_a_att_perm_0_1110/best_model/model.ckpt \
+--test_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+> decode_deva_semeval_a_att_perm_0_1110.out
+
+#Check test16 results
+nohup \
+python decode.py \
+--checkpoint_file /datadrive/ML/jasper/tensorflow/cnn-classification/tmp/semeval_a_att_perm_0_1110/best_model/model.ckpt \
+--test_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.npy \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+> decode_test16_semeval_a_att_perm_0_1110.out
+
+#Check test17 results
+nohup \
+python decode.py \
+--checkpoint_file /datadrive/ML/jasper/tensorflow/cnn-classification/tmp/semeval_a_att_perm_0_1110/best_model/model.ckpt \
+--test_path /mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-17-we_fg-l-3-id_info-cnn-120.npy \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--lexicon_embedding_dimension 3 \
+> decode_test17_semeval_a_att_perm_0_1110.out
+
+nohup \
+python \
+decode.py \
+--checkpoint_file /datadrive/ML/jasper/tensorflow/cnn-classification/tmp/smm4h_task2_t1/best_i/model.ckpt \
+--test_path /datadrive/ML/shubham/data_wrangler_new/smm4h_task2_dev_embedd_400.npy \
+--no_one_hot \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+> decode_smm4h_task2_t1_dev.out
+
+nohup \
+python \
+decode.py \
+--architecture attention-cnn \
+--run_name attention-cnn-d0 \
+--test_path /datadrive/nlp/semeval/std1/twitter-2016test-A_sample_STD1i.txt \
+--input_type txt \
+--embedd_model_path /datadrive/nlp/jasper/w2v/jinho/w2v-twitter-archiveteam-400.model \
+--document_length 120 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--verbose 2 \
+> smm4h_task2_cv_jinho_wide_f1mi01_3_top4_test.out

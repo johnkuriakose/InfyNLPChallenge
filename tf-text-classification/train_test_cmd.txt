@@ -1,0 +1,87 @@
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name train_td_test_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+> train_td_test_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name cross_val_test_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+> cross_val_test_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name train_td_test_no_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_train_jinho_400.npy \
+--dev_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_dev_jinho_400.npy \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+--annealing_restarts 0 \
+--annealing_factor 0 \
+> train_td_test_no_anneal.out 
+
+nohup \
+python train.py \
+--architecture tsainfcnn \
+--run_name cross_val_test_no_anneal \
+--learning_rate 0.0001 \
+--num_epochs 5 \
+--batch_size 100 \
+--document_length 47 \
+--embedding_dimension 400 \
+--n_classes 3 \
+--train_path /datadrive/nlp/jasper/smm4h/npy/smm4h_task2_cv_jinho_400.npy \
+--cross_valid 5 \
+--no_one_hot \
+--keep_prob 0.7 \
+--embedd_filter_sizes 2 3 4 \
+--n_filters 100 \
+--n_dense_output 100 \
+--adam_b2 0.9 \
+--verbose 2 \
+--annealing_restarts 0 \
+--annealing_factor 0 \
+> cross_val_test_no_anneal.out 

@@ -1,0 +1,148 @@
+******************** LOAD/SAVE EXPERIMENTS ********************
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+std_load \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120_n500.txt \
+> mem_test_std_load_n500.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+genfromtxt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120_n500.txt \
+> mem_test_genfromtxt_n500.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_save \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120_n500.txt \
+data_storage_test.npy \
+> mem_test_np_save_n500.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_save_iter \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120_n500.txt \
+data_storage_test.npy \
+> mem_test_np_save_iter_n500.out
+
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_load \
+data_storage_test.npy \
+> mem_test_np_load_n500.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+std_load \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.txt \
+> mem_test_std_load_dev-a.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+genfromtxt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.txt \
+> mem_test_genfromtxt_dev-a.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_save \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.txt \
+data_storage_test.npy \
+> mem_test_np_save_dev-a.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_load \
+data_storage_test.npy \
+> mem_test_np_load_dev-a.out
+
+
+******************** DATA CONVERSION ********************
+
+nohup \
+./timeout -m 70000000 \
+python \
+data_helper.py \
+np_save_iter \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.txt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_save_iter_dev-a.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_load \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-dev-a-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_load_dev-a.out
+
+
+nohup \
+./timeout -m 70000000 \
+python \
+data_helper.py \
+np_save_iter \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.txt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_save_iter_train-a.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_load \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-train-a-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_load_train-a.out
+
+nohup \
+./timeout -m 70000000 \
+python \
+data_helper.py \
+np_save_iter \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.txt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_save_iter_test-16.out
+
+nohup \
+python \
+data_helper.py \
+np_save_iter \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-17-we_fg-l-3-id_info-cnn-120.txt \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-17-we_fg-l-3-id_info-cnn-120.npy \
+> np_save_iter_test-17.out
+
+nohup \
+./timeout -m 60000000 \
+python \
+data_helper.py \
+np_load_hot \
+/mnt/resource/ML/Amit/sentiment-experiment/data/sentiment-test-16-we_fg-l-3-id_info-cnn-120.npy \
+> mem_test_np_load_test-16.out
+
+nohup \
+/datadrive/ML/jasper/perl/timeout/timeout -m 60000000 \
+python \
+data_helper.py \
+np_load \
+/datadrive/nlp/jasper/smm4h/smm4h_task1_embedd_400.npy \
+> mem_test_np_load_smm4h-1.out
